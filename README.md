@@ -31,6 +31,15 @@ The .env should have DB_PORT=3306 and HTTP_PORT=8080
 # DELETE 
 ![image](https://github.com/RinzlerN26/Go_CRUD/assets/74294802/d78329e9-90b6-4ac8-bab2-d169879278c9)
 
+# Testing
+
+Testing done using main_test.go
+
+![image](https://github.com/RinzlerN26/Go_CRUD/assets/74294802/ae25a296-c493-45d6-9e0d-ecf94a89ef92)
+
+![image](https://github.com/RinzlerN26/Go_CRUD/assets/74294802/d4bdf40e-21ad-42e1-b0bc-5394ab158e71)
+
+
 
 
 
