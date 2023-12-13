@@ -33,7 +33,7 @@ The .env should have DB_PORT=3306 and HTTP_PORT=8080
 
 # Testing
 
-Testing done using main_test.go
+Testing done using main_test.go.
 
 ![image](https://github.com/RinzlerN26/Go_CRUD/assets/74294802/ae25a296-c493-45d6-9e0d-ecf94a89ef92)
 
