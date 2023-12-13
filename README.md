@@ -14,7 +14,7 @@ go run main.go
 * Go to http://localhost:8080/cars/{car_id}/{car_status} replacing car_id and car_status with your values to update the database.<br />
 * Go to http://localhost:8080/cars/{car_name}/{car_status} to add new cars to the database.<br />
 
-The .env should have DB_PORT=3306 and HTTP_PORT=8080
+The .env should have DB_PORT=3306 and HTTP_PORT=8080.
 
 # Docker Desktop  
 ![image](https://github.com/RinzlerN26/Go_CRUD/assets/74294802/3d09e085-2979-46b4-9777-5e32de717219)
