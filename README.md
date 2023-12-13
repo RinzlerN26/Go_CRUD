@@ -16,7 +16,7 @@ go run main.go
 
 The .env should have DB_PORT=3306 and HTTP_PORT=8080
 
-# Docker Desktop mySQL image status 
+# Docker Desktop  
 ![image](https://github.com/RinzlerN26/Go_CRUD/assets/74294802/3d09e085-2979-46b4-9777-5e32de717219)
 
 # GET
