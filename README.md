@@ -8,11 +8,11 @@ A gofr based application implementing CRUD operations on MySQL based docker data
 go run main.go 
 ```
 
-->Go to http://localhost:8080/welcome to see the landing page
-->Go to http://localhost:8080/get_cars to see information about the cars.
-->Go to http://localhost:8080/cars/delete to delete repaired cars.
-->Go to http://localhost:8080/cars/{car_id}/{car_status} replacing car_id and car_status with your values to update the database.
-->Go to http://localhost:8080/cars/{car_name}/{car_status} to add new cars to the database.
+->Go to http://localhost:8080/welcome to see the landing page <br />
+->Go to http://localhost:8080/get_cars to see information about the cars.<br />
+->Go to http://localhost:8080/cars/delete to delete repaired cars.<br />
+->Go to http://localhost:8080/cars/{car_id}/{car_status} replacing car_id and car_status with your values to update the database.<br />
+->Go to http://localhost:8080/cars/{car_name}/{car_status} to add new cars to the database.<br />
 
 
 # Landing Page
