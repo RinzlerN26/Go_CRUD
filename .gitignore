@@ -1,0 +1,5 @@
+Project_Details.pdf
+.env
+tmp
+*.exe
+.air.toml
