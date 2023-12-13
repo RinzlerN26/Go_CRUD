@@ -9,14 +9,10 @@ type cars struct {
 }
 
 func main() {
-	// initialise gofr object
+
 	app := gofr.New()
 
-	app.GET("/welcome", func(ctx *gofr.Context) (interface{}, error) {
-
-		return "Welcome to CARS management GO_CRUD application!", nil
-	})
-
+	//Create Route
 	app.POST("/cars/{car_name}/{car_status}", func(ctx *gofr.Context) (interface{}, error) {
 		caname := ctx.PathParam("car_name")
 		castat := ctx.PathParam("car_status")
@@ -25,21 +21,13 @@ func main() {
 		return nil, err
 	})
 
-	app.PUT("/cars/{car_id}/{car_status}", func(ctx *gofr.Context) (interface{}, error) {
-		caid := ctx.PathParam("car_id")
-		castat := ctx.PathParam("car_status")
-		_, err := ctx.DB().ExecContext(ctx, "Update table cars set status=? where id=?", castat, caid)
+	//Landing Page Route
+	app.GET("/welcome", func(ctx *gofr.Context) (interface{}, error) {
 
-		return nil, err
+		return "Welcome to CARS management GO_CRUD application!", nil
 	})
 
-	app.DELETE("/cars/{car_id}", func(ctx *gofr.Context) (interface{}, error) {
-		caid := ctx.PathParam("car_id")
-		_, err := ctx.DB().ExecContext(ctx, "Delete from cars where status='RepairingDone' and id=?", caid)
-
-		return nil, err
-	})
-
+	//Get Route
 	app.GET("/get_cars", func(ctx *gofr.Context) (interface{}, error) {
 		var car_d []cars
 
@@ -58,11 +46,24 @@ func main() {
 			car_d = append(car_d, car_i)
 		}
 
-		// return the customer
 		return car_d, nil
 	})
 
-	// Starts the server, it will listen on the default port 8000.
-	// it can be over-ridden through configs
+	//Update Route
+	app.PUT("/cars/{car_id}/{car_status}", func(ctx *gofr.Context) (interface{}, error) {
+		caid := ctx.PathParam("car_id")
+		castat := ctx.PathParam("car_status")
+		_, err := ctx.DB().ExecContext(ctx, "Update cars set status=? where id=?", castat, caid)
+
+		return nil, err
+	})
+
+	//Delete route
+	app.DELETE("/cars/delete", func(ctx *gofr.Context) (interface{}, error) {
+		_, err := ctx.DB().ExecContext(ctx, "Delete from cars where status='RepairingDone'")
+
+		return nil, err
+	})
+
 	app.Start()
 }
