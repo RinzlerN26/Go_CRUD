@@ -25,6 +25,21 @@ func main() {
 		return nil, err
 	})
 
+	app.PUT("/cars/{car_id}/{car_status}", func(ctx *gofr.Context) (interface{}, error) {
+		caid := ctx.PathParam("car_id")
+		castat := ctx.PathParam("car_status")
+		_, err := ctx.DB().ExecContext(ctx, "Update table cars set status=? where id=?", castat, caid)
+
+		return nil, err
+	})
+
+	app.DELETE("/cars/{car_id}", func(ctx *gofr.Context) (interface{}, error) {
+		caid := ctx.PathParam("car_id")
+		_, err := ctx.DB().ExecContext(ctx, "Delete from cars where status='RepairingDone' and id=?", caid)
+
+		return nil, err
+	})
+
 	app.GET("/get_cars", func(ctx *gofr.Context) (interface{}, error) {
 		var car_d []cars
 
