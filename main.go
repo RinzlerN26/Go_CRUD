@@ -20,8 +20,7 @@ func main() {
 	app.POST("/cars/{car_name}/{car_status}", func(ctx *gofr.Context) (interface{}, error) {
 		caname := ctx.PathParam("car_name")
 		castat := ctx.PathParam("car_status")
-		// Inserting a customer row in database using SQL
-		_, err := ctx.DB().ExecContext(ctx, "INSERT INTO cars (car_name,status) VALUES (?)", caname, castat)
+		_, err := ctx.DB().ExecContext(ctx, "INSERT INTO cars (car_name,status) VALUES (?,?)", caname, castat)
 
 		return nil, err
 	})
