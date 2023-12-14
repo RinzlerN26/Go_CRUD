@@ -1,6 +1,12 @@
 # Go_CRUD
 A gofr based application implementing CRUD operations on MySQL based docker database image.
 
+# Setting up mysql and database
+```sh
+docker run --name gofr-mysql -e MYSQL_ROOT_PASSWORD='your password' -e MYSQL_DATABASE=cars_db -p 3306:3306 -d mysql:8.0.30
+docker exec -it gofr-mysql mysql -uroot -p'your password' cars_db -e "CREATE TABLE cars (id INT AUTO_INCREMENT PRIMARY KEY, car_name VARCHAR(255) NOT NULL,status VARCHAR(255) NOT NULL);"
+```
+
 # Instructions to run
 * Open terminal and run in the project directory.
 
