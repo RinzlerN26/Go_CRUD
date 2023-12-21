@@ -31,7 +31,6 @@ func main() {
 	app.GET("/get_cars", func(ctx *gofr.Context) (interface{}, error) {
 		var car_d []cars
 
-		// Getting the customer from the database using SQL
 		rows, err := ctx.DB().QueryContext(ctx, "SELECT * FROM cars")
 		if err != nil {
 			return nil, err
